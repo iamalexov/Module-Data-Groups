@@ -47,4 +47,48 @@
 
 # Calculating the median
 
-### Prototype is an object that JavaScript uses as a fallback when a property or method is not found on the object itself.
+### Prototype is an object that JavaScript uses as a fallback when a property or method is not found on the object itself. 
+
+
+#  <span style="color:fuchsia"> Reference: </span>
+### In JavaScript, a reference is not the data itself.
+
+### A reference is a link (address) that points to where the data is stored in memory.
+
+### When you work with arrays or objects, variables do not store the value,they store a reference to the value.
+
+##  <span style="color:fuchsia"> Example with numbers(VALU): </span>
+
+` let a = 5; `<br>
+` let b = a; `<br>
+
+`b = 10; ` <br>
+`console.log(a); // 5` <br>
+`console.log(b); // 10` <br>
+
+### a stores the value 5
+### b gets a copy of 5
+### Changing b does NOT change a
+
+
+##  <span style="color:fuchsia"> Example with numbers(REFERENCES): </span>
+
+`let arr1 = [1, 2, 3];`
+`let arr2 = arr1;`
+
+`arr2.push(4);`
+
+`console.log(arr1); // [1, 2, 3, 4]`
+`console.log(arr2); // [1, 2, 3, 4]`
+
+## arr1 stores a reference to the array
+## arr2 gets the SAME reference
+## Both point to the same array in memory
+## Changing one changes the other
+
+
+
+
+
+ 
+
