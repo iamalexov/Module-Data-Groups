@@ -1,7 +1,13 @@
 // Predict and explain first...
 
+
+// The code does not work because for...of cannot be used on objects
+// Objects are not iterable, so we must use a different approach to loop over their values
+
 // This program attempts to log out all the property values in the object.
 // But it isn't working. Explain why first and then fix the problem
+
+
 
 const author = {
   firstName: "Zadie",
@@ -11,6 +17,9 @@ const author = {
   alive: true,
 };
 
-for (const value of author) {
-  console.log(value);
+for (const value in author) {
+  console.log(`${value}: ${author[value]}`);
 }
+
+
+// An object is not iterable in JavaScript, but we can loop over its keys or values using different methods
