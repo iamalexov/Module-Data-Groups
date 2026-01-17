@@ -22,4 +22,3 @@ for (const value in author) {
 }
 
 
-// An object is not iterable in JavaScript, but we can loop over its keys or values using different methods
