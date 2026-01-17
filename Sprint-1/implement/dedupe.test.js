@@ -16,12 +16,37 @@ E.g. dedupe([1, 2, 1]) target output: [1, 2]
 // Given an empty array
 // When passed to the dedupe function
 // Then it should return an empty array
-test.todo("given an empty array, it returns an empty array");
+test("given an empty array, it returns an empty array", () => {
+  expect(dedupe([])).toEqual([]);
+});
 
 // Given an array with no duplicates
 // When passed to the dedupe function
 // Then it should return a copy of the original array
+test("given an array with no number duplicates, it returns a copy", () => {
+  const input = [5, 1, 2, 3, 8];
+  const result = dedupe(input);
+  
+    expect(result).toEqual([5, 1, 2, 3, 8]);
+    expect(result).not.toBe(input);
+
+/*     expect(dedupe([1,2,3])).toEqual([1,2,3]);
+ */
+});
+
+
+
+test("given an array with number duplicates, it removes duplicates preserving order", () => {
+  expect(dedupe([5, 1, 1, 2, 3, 2, 5, 8])).toEqual([5, 1, 2, 3, 8]);
+});
 
 // Given an array with strings or numbers
 // When passed to the dedupe function
 // Then it should remove the duplicate values, preserving the first occurence of each element
+test("given an array with duplicates, it removes duplicates preserving order", () => {
+  expect(dedupe([5, 1, 1, 2, "a", "a", "b", "3"])).toEqual([5, 1, 2, "a", "b", "3"]);
+});
+
+
+
+
