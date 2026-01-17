@@ -1,15 +1,15 @@
 function findMax(elements) {
   if (!Array.isArray(elements)) return null;
 
-  const num = elements.filter(
+  const numbers = elements.filter(
     item => typeof item === 'number' && !Number.isNaN(item)
   );
-    if (num.length === 0) return -Infinity;
+    if (numbers.length === 0) return null;
 
-     let max = num[0]
-    for(let i = 0; i < num.length; i++){
-        if (num[i] > max) {
-            max = num[i]
+     let max = numbers[0]
+    for(let i = 0; i < numbers.length; i++){
+        if (numbers[i] > max) {
+            max = numbers[i]
         }
     }
     return max

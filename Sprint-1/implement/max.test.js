@@ -25,13 +25,6 @@ test("given an empty array, it returns -Infinity", () => {
 // When passed to the max function
 // Then it should return that number
 
-test("Given an array with one number,Then it should return that number", () => {
-    
-   const input = [8];
-   const result = findMax(input);
-  
-    expect(result).toBe(8);
-}); 
 
 describe("Find max in an array with the single element", () => {
   [

@@ -1,16 +1,18 @@
+const getNumbersOnly = require('./filtering');
+
+
 function sum(elements) {
     if (!Array.isArray(elements)) return 0;
 
-  const num = elements.filter(
-    item => typeof item === 'number' && !Number.isNaN(item)
-  );
+  const numbers = getNumbersOnly(elements);
 
-  let sum = 0;
 
-for (let i = 0; i < num.length; i++){
-    sum+= num[i];
+  let total = 0;
+
+for (let i = 0; i < numbers.length; i++){
+    total+= numbers[i];
 }
-return sum
+return total
 }
 
 module.exports = sum;
