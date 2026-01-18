@@ -5,8 +5,34 @@
 
 const parseQueryString = require("./querystring.js")
 
-test("parses querystring values containing =", () => {
-  expect(parseQueryString("equation=x=y+1")).toEqual({
-    "equation": "x=y+1",
+test("returns empty object for empty string", () => {
+  const input ="";
+  const currentOutput = parseQueryString(input);
+  const targetOutput = {};
+
+  expect(currentOutput).toEqual(targetOutput);
+
   });
-});
+
+  test( "pareses values containing '='", () => {
+  const input= "equation=x=y+1";
+  const currentOutput = parseQueryString(input);
+  const targetOutput = {"equation": "x=y+1"};
+ 
+    expect(currentOutput).toEqual(targetOutput);
+    
+ });
+
+
+  test("parses multiple key value pairs", () => {
+  const input= "name=Alex&age=30";
+
+  const currentOutput = parseQueryString(input);
+  const targetOutput = {name: "Alex", age: "30"};
+ 
+    expect(currentOutput).toEqual(targetOutput);
+    
+ });
+
+
+
