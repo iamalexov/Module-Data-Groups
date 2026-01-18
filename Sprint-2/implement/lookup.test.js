@@ -33,3 +33,41 @@ It should return:
    'CA': 'CAD'
  }
 */
+
+
+describe("createLookup", () => {
+
+  test("creates lookup from multiple pairs", () => {
+    const input = [
+      ["US", "USD"],
+      ["CA", "CAD"]
+    ];
+
+    expect(createLookup(input)).toEqual({
+      US: "USD",
+      CA: "CAD"
+    });
+  });
+
+  test("works with one pair", () => {
+    expect(createLookup([["UA", "UAH"]])).toEqual({
+      UA: "UAH"
+    });
+  });
+
+  test("returns empty object for empty input", () => {
+    expect(createLookup([])).toEqual({});
+  });
+
+  test("overwrites value if key repeats", () => {
+    expect(
+      createLookup([
+        ["US", "USD"],
+        ["US", "USDT"]
+      ])
+    ).toEqual({
+      US: "USDT"
+    });
+  });
+
+});
