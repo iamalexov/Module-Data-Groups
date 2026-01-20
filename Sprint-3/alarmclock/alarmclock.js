@@ -1,3 +1,6 @@
+const timeRemaining = document.querySelector("timeRemaining");
+
+
 function setAlarm() {}
 
 // DO NOT EDIT BELOW HERE
