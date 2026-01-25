@@ -13,13 +13,17 @@ function time_convert(value) {
 }
 
 let seconds = 0;
-let interval;
+let interval= null;
 
 function setAlarm() {
   if (!alarmInput.value) {
     alert("Please set time");
     return;
   }
+  else {
+      clearInterval(interval);
+      interval = null;
+    }
 
   /*   let minutes = Math.floor(value / 60).toString().padStart(2, "0")
    */
@@ -29,6 +33,7 @@ function setAlarm() {
 
   interval = setInterval(() => {
     timeDisplay.textContent = "Time Remaining: " + time_convert(currentTime);
+    
 
     if (currentTime > 0) {
       currentTime--;
