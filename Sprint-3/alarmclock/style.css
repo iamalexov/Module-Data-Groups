@@ -1,15 +1,40 @@
+.alarm_clock {
+  display: inline;
+  background-color:#182b8e;
+}
+
 .centre {
+  background-color: #1e293b;
+  background-repeat: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0,4);
   position: fixed;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  font:
+  italic 1.2rem "Fira Sans",
+  serif;
 }
-
+label {
+  color: #94a3b8;
+}
 #alarmSet {
   margin: 20px;
 }
 
+#set{
+  background: #3b82f6;
+  color: white;
+}
+
+#stop{
+  background: #ef4444;
+  color: white;
+}
+
 h1 {
+
   text-align: center;
+  color: #f8fafc;
 }
